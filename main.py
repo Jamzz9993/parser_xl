@@ -21,8 +21,18 @@ class myParser:
 
         self.__int_var = tkinter.IntVar()
         self.__int_var.set(0)
+        self.__r_button_frame = tkinter.Frame(self.__main_window, relief='groove', borderwidth=1)
 
-        self.__radio_but1 = tkinter.Radiobutton()
+        self.__radio_but1 = tkinter.Radiobutton(self.__r_button_frame,
+                                                variable=self.__int_var, value=1,
+                                                text='Many files parse mode:')
+        self.__radio_but2 = tkinter.Radiobutton(self.__r_button_frame,
+                                                variable=self.__int_var, value=2,
+                                                text='One file parse mode:')
+        self.__r_button_frame.pack()
+        self.__radio_but1.pack()
+        self.__radio_but2.pack()
+
 
         self.__quit_button = tkinter.Button(self.__main_window, text='Quit',
                                             command=self.__main_window.destroy)
